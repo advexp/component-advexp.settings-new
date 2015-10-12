@@ -1,0 +1,23 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TDD", "TDD.csproj", "{DD48F749-485F-4C37-AD28-24362AAFE62E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|iPhoneSimulator = Debug|iPhoneSimulator
+		Release|iPhoneSimulator = Release|iPhoneSimulator
+		Debug|iPhone = Debug|iPhone
+		Release|iPhone = Release|iPhone
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DD48F749-485F-4C37-AD28-24362AAFE62E}.Debug|iPhone.ActiveCfg = Debug|iPhone
+		{DD48F749-485F-4C37-AD28-24362AAFE62E}.Debug|iPhone.Build.0 = Debug|iPhone
+		{DD48F749-485F-4C37-AD28-24362AAFE62E}.Debug|iPhoneSimulator.ActiveCfg = Debug|iPhoneSimulator
+		{DD48F749-485F-4C37-AD28-24362AAFE62E}.Debug|iPhoneSimulator.Build.0 = Debug|iPhoneSimulator
+		{DD48F749-485F-4C37-AD28-24362AAFE62E}.Release|iPhone.ActiveCfg = Release|iPhone
+		{DD48F749-485F-4C37-AD28-24362AAFE62E}.Release|iPhone.Build.0 = Release|iPhone
+		{DD48F749-485F-4C37-AD28-24362AAFE62E}.Release|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
+		{DD48F749-485F-4C37-AD28-24362AAFE62E}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
+	EndGlobalSection
+EndGlobal
