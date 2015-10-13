@@ -16,6 +16,8 @@ iOS: Any settings storage that is user-defined or provided by third parties
 
 This component makes it possible to create an application in Xamarin Starter Edition. That does not exceed the executable file size limits for a simple application.
 
+**Advexp.Settings - Local** component you can find here: <http://components.xamarin.com/view/advexp-settings-local>
+
 #####Example of a settings declaration
 
 	:::csharp
