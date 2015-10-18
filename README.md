@@ -2,7 +2,7 @@
 
 ####Details
 
-Create settings and make them accessible inside your iOS application.
+Create settings and make them accessible inside your iOS application using Xamarin.iOS
 
 - Storing settings in an encrypted form using Keychain or in a simple form using *NSUserDefaults*
 - Ability to use user-defined storage for settings
