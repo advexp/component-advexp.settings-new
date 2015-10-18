@@ -7,7 +7,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Advexp")]
 [assembly: AssemblyProduct("Advexp.Settings.TDD")]
-[assembly: AssemblyCopyright("Advexp, Copyright © 2015")]
+[assembly: AssemblyCopyright("Alexey Ivakin, Copyright © 2015")]
 [assembly: AssemblyTrademark("Advexp.Settings TDD")]
 [assembly: AssemblyCulture("")]
 
