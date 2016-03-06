@@ -40,4 +40,7 @@ Global
 		{E745B033-4422-4C8C-B34D-2401A00382A1}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
 		{E745B033-4422-4C8C-B34D-2401A00382A1}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
 	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		version = 1.1
+	EndGlobalSection
 EndGlobal
