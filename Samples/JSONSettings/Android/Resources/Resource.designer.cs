@@ -26,6 +26,7 @@ namespace Sample.JSONSettings.Android
 		
 		public static void UpdateIdValues()
 		{
+			global::Advexp.Resource.String.library_name = global::Sample.JSONSettings.Android.Resource.String.library_name;
 		}
 		
 		public partial class Array

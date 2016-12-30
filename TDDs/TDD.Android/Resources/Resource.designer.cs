@@ -48,6 +48,8 @@ namespace TDD
 			global::Xamarin.Android.NUnitLite.Resource.Layout.results = global::TDD.Resource.Layout.results;
 			global::Xamarin.Android.NUnitLite.Resource.Layout.test_result = global::TDD.Resource.Layout.test_result;
 			global::Xamarin.Android.NUnitLite.Resource.Layout.test_suite = global::TDD.Resource.Layout.test_suite;
+			global::Advexp_V1.Resource.String.library_name = global::TDD.Resource.String.library_name;
+			global::Advexp.Resource.String.library_name = global::TDD.Resource.String.library_name;
 		}
 		
 		public partial class Attribute

@@ -50,9 +50,6 @@
     <Reference Include="System" />
     <Reference Include="Mono.Android" />
     <Reference Include="Xamarin.Android.NUnitLite" />
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>..\..\packages\Newtonsoft.Json.7.0.1\lib\portable-net40+sl5+wp80+win8+wpa81\Newtonsoft.Json.dll</HintPath>
-    </Reference>
     <Reference Include="System.Core" />
     <Reference Include="Advexp.Settings_V1">
       <HintPath>..\TDD.References\V1\Android\Advexp.Settings_V1.dll</HintPath>
@@ -68,6 +65,9 @@
     </Reference>
     <Reference Include="Advexp.JSONSettings.Plugin.PCL">
       <HintPath>..\TDD.References\Plugins\PCL\Release\JSONSettings\Advexp.JSONSettings.Plugin.PCL.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\packages\Newtonsoft.Json.7.0.1\lib\portable-net40+sl5+wp80+win8+wpa81\Newtonsoft.Json.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

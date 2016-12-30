@@ -98,6 +98,12 @@
     <Reference Include="Advexp.JSONSettings.Plugin.PCL">
       <HintPath>..\TDD.References\Plugins\PCL\Release\JSONSettings\Advexp.JSONSettings.Plugin.PCL.dll</HintPath>
     </Reference>
+    <Reference Include="Advexp.Settings_V1">
+      <HintPath>..\TDD.References\V1\iOS\Advexp.Settings_V1.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\packages\Newtonsoft.Json.7.0.1\lib\portable-net40+sl5+wp80+win8+wpa81\Newtonsoft.Json.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Properties\" />
@@ -105,8 +111,8 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
-    <None Include="packages.config" />
     <None Include="Entitlements.plist" />
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Main.cs" />

@@ -3,3 +3,8 @@ obj
 TDD.userprefs
 Components
 packages
+Bin/Android/Debug
+Bin/Obj
+Bin/PCL/Debug
+Bin/iOS/iPhoneSimulator
+Samples/PCL-iOS/App/bin
