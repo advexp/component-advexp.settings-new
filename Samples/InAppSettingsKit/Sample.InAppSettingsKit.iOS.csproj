@@ -89,9 +89,6 @@
     <Reference Include="Xamarin.iOS" />
     <Reference Include="MonoTouch.Dialog-1" />
     <Reference Include="System.Core" />
-    <Reference Include="InAppSettingsKit">
-      <HintPath>..\..\Components\InAppSettingsKit-2.6.0.0\lib\ios-unified\InAppSettingsKit.dll</HintPath>
-    </Reference>
     <Reference Include="Advexp.JSONSettings.Plugin.PCL">
       <HintPath>..\..\packages\Advexp.Settings.Local.2.0.6\lib\Xamarin.iOS10\Advexp.JSONSettings.Plugin.PCL.dll</HintPath>
     </Reference>
@@ -103,6 +100,9 @@
     </Reference>
     <Reference Include="SharpSerializer.PCL">
       <HintPath>..\..\packages\Advexp.Settings.Local.2.0.6\lib\Xamarin.iOS10\SharpSerializer.PCL.dll</HintPath>
+    </Reference>
+    <Reference Include="InAppSettingsKit">
+      <HintPath>..\..\Components\InAppSettingsKit-2.6.0.0\lib\ios-unified\InAppSettingsKit.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
