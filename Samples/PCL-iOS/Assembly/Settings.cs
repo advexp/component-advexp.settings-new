@@ -1,5 +1,4 @@
-﻿using System;
-using Advexp;
+﻿using Advexp;
 
 namespace Sample.Assembly.PCL
 {

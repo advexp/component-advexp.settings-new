@@ -3,7 +3,7 @@ using Foundation;
 using MonoTouch.Dialog;
 using UIKit;
 
-namespace Sample
+namespace Sample.LocalSettings.iOS
 {
     class LocalSettingsController : DialogViewController
     {

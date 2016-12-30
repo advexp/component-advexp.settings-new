@@ -3,19 +3,12 @@ using UIKit;
 using MonoTouch.Dialog;
 using Sample.Assembly.PCL;
 using System;
-using Sample;
 
 namespace Sample.App.iOS
 {
-    // The UIApplicationDelegate for the application. This class is responsible for launching the
-    // User Interface of the application, as well as listening (and optionally responding) to application events from iOS.
     [Register("AppDelegate")]
     public class AppDelegate : UIApplicationDelegate
     {
-        //RootElement m_rootElement;
-
-        // class-level declarations
-
         public override UIWindow Window
         {
             get;
@@ -27,7 +20,7 @@ namespace Sample.App.iOS
         {
             Window = new UIWindow (UIScreen.MainScreen.Bounds);
 
-            AssemblyClass.Load();
+            AssemblyClass.LoadSettings();
 
             var rootElement = new RootElement ("Advexp.Settings PCL-iOS sample");
             var jsonSettingsElement = new MultilineElement(AssemblyClass.GetJSON());
@@ -39,7 +32,7 @@ namespace Sample.App.iOS
                 AssemblyClass.BoolValue = boolElement.Value;
 
                 UpdateJSON(rootElement, jsonSettingsElement);
-                AssemblyClass.Save();
+                AssemblyClass.SaveSettings();
             };
 
             var stringElement = new EntryElement("string value", "string value", 
@@ -50,7 +43,7 @@ namespace Sample.App.iOS
                 AssemblyClass.StringValue = stringElement.Value;
 
                 UpdateJSON(rootElement, jsonSettingsElement);
-                AssemblyClass.Save();
+                AssemblyClass.SaveSettings();
             };
 
             var enumElement = new RootElement("enum value", new RadioGroup((int)AssemblyClass.EnumValue));
@@ -60,7 +53,7 @@ namespace Sample.App.iOS
                 AssemblyClass.EnumValue = (SampleEnum)enumElement.RadioSelected;
 
                 UpdateJSON(rootElement, jsonSettingsElement);
-                AssemblyClass.Save();
+                AssemblyClass.SaveSettings();
             };
 
             var enumsSection = new RootElement("enum value", new RadioGroup((int)AssemblyClass.EnumValue)) {
@@ -89,7 +82,7 @@ namespace Sample.App.iOS
             };
 
             rootElement.Add(rootSection);
-                
+
             var rootVC = new DialogViewController(rootElement);
             var nav = new UINavigationController(rootVC);
 

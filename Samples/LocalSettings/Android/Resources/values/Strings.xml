@@ -15,6 +15,7 @@
     <string name="dialog_title_enum_preference">Choose one</string>
 
     <string name="app_name">Advexp.Settings Sample</string>
+    <string name="library_name">Advexp.Settings Sample</string>
     <string name="btn_text">Change preferences</string>
 
     <string name="edittext_default_value">Default text</string>

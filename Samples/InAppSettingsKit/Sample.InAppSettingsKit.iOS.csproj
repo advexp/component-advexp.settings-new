@@ -1,0 +1,173 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">iPhoneSimulator</Platform>
+    <ProjectTypeGuids>{FEACFBD2-3405-455C-9665-78FE426C6842};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <ProjectGuid>{424FB004-7068-44D5-880E-CB76B7B8A653}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>InAppSettingsKitSample</RootNamespace>
+    <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
+    <AssemblyName>Sample.InAppSettingsKit.iOS</AssemblyName>
+    <BaseIntermediateOutputPath>..\..\..\Bin\Obj\iOS\iPhoneSimulator\Debug\Sample.InAppSettingsKit</BaseIntermediateOutputPath>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ReleaseVersion>2.0</ReleaseVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\..\Bin\iOS\iPhoneSimulator\Debug\Sample.InAppSettingsKit</OutputPath>
+    <BaseIntermediateOutputPath>..\..\..\Bin\Obj\iOS\iPhoneSimulator\Debug\Sample.InAppSettingsKit</BaseIntermediateOutputPath>
+    <DefineConstants>DEBUG;__MOBILE__;__IOS__;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <MtouchArch>i386</MtouchArch>
+    <MtouchLink>None</MtouchLink>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <CodesignKey>iPhone Developer</CodesignKey>
+    <MtouchDebug>true</MtouchDebug>
+    <MtouchUseRefCounting>true</MtouchUseRefCounting>
+    <CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
+    <MtouchNoSymbolStrip>true</MtouchNoSymbolStrip>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\..\Bin\iOS\iPhoneSimulator\Release\Sample.InAppSettingsKit</OutputPath>
+    <BaseIntermediateOutputPath>..\..\..\Bin\Obj\iOS\iPhoneSimulator\Release\Sample.InAppSettingsKit</BaseIntermediateOutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <MtouchArch>i386</MtouchArch>
+    <MtouchLink>None</MtouchLink>
+    <CodesignKey>iPhone Developer</CodesignKey>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <MtouchUseRefCounting>true</MtouchUseRefCounting>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <DefineConstants>__MOBILE__;__IOS__;</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhone' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\..\Bin\iOS\iPhone\Debug\Sample.InAppSettingsKit</OutputPath>
+    <BaseIntermediateOutputPath>..\..\..\Bin\Obj\iOS\iPhone\Debug\Sample.InAppSettingsKit</BaseIntermediateOutputPath>
+    <DefineConstants>DEBUG;__MOBILE__;__IOS__;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <MtouchArch>ARMv7, ARMv7s, ARM64</MtouchArch>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <CodesignKey>iPhone Developer</CodesignKey>
+    <MtouchDebug>true</MtouchDebug>
+    <MtouchUseRefCounting>true</MtouchUseRefCounting>
+    <IpaPackageName>
+    </IpaPackageName>
+    <CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
+    <MtouchNoSymbolStrip>true</MtouchNoSymbolStrip>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\..\Bin\iOS\iPhone\Release\Sample.InAppSettingsKit</OutputPath>
+    <BaseIntermediateOutputPath>..\..\..\Bin\Obj\iOS\iPhone\Release\Sample.InAppSettingsKit</BaseIntermediateOutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <MtouchArch>ARMv7, ARMv7s, ARM64</MtouchArch>
+    <ConsolePause>false</ConsolePause>
+    <CodesignKey>iPhone Developer</CodesignKey>
+    <MtouchUseRefCounting>true</MtouchUseRefCounting>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <IpaPackageName>
+    </IpaPackageName>
+    <DefineConstants>__MOBILE__;__IOS__;</DefineConstants>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="Xamarin.iOS" />
+    <Reference Include="MonoTouch.Dialog-1" />
+    <Reference Include="System.Core" />
+    <Reference Include="Advexp.JSONSettings.Plugin.PCL">
+      <HintPath>..\..\packages\Advexp.Settings.Local.2.0.6\lib\Xamarin.iOS10\Advexp.JSONSettings.Plugin.PCL.dll</HintPath>
+    </Reference>
+    <Reference Include="Advexp.Settings">
+      <HintPath>..\..\packages\Advexp.Settings.Local.2.0.6\lib\Xamarin.iOS10\Advexp.Settings.dll</HintPath>
+    </Reference>
+    <Reference Include="Advexp.Settings.Utils.PCL">
+      <HintPath>..\..\packages\Advexp.Settings.Local.2.0.6\lib\Xamarin.iOS10\Advexp.Settings.Utils.PCL.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpSerializer.PCL">
+      <HintPath>..\..\packages\Advexp.Settings.Local.2.0.6\lib\Xamarin.iOS10\SharpSerializer.PCL.dll</HintPath>
+    </Reference>
+    <Reference Include="InAppSettingsKit">
+      <HintPath>..\..\Components\InAppSettingsKit-2.6.0.0\lib\ios-unified\InAppSettingsKit.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Info.plist" />
+    <None Include="Entitlements.plist" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Main.cs" />
+    <Compile Include="AppDelegate.cs" />
+    <Compile Include="CustomViewCell.cs" />
+    <Compile Include="CustomViewCell.designer.cs">
+      <DependentUpon>CustomViewCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewController.cs" />
+    <Compile Include="ViewController.designer.cs">
+      <DependentUpon>ViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Advexp.Settings\AdvexpSettingsViewController.cs" />
+    <Compile Include="Advexp.Settings\DialogElementsEx.cs" />
+    <Compile Include="Advexp.Settings\FloatElementEx.cs" />
+    <Compile Include="Advexp.Settings\Settings.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+    <InterfaceDefinition Include="Main.storyboard" />
+    <InterfaceDefinition Include="CustomViewCell.xib" />
+    <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Advexp.Settings\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\Settings.bundle\Bluetooth.plist">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Settings.bundle\Brightness.plist">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Settings.bundle\Notifications.plist">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Settings.bundle\Root.plist">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Settings.bundle\General.plist">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\Contents.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Advexp.Settings\iOS\Advexp.Settings.iOS.csproj">
+      <Project>{DBF0F3DD-904A-462F-A24C-83BAEABC4D94}</Project>
+      <Name>Advexp.Settings.iOS</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <XamarinComponentReference Include="InAppSettingsKit">
+      <Version>2.6.0.0</Version>
+      <Visible>False</Visible>
+    </XamarinComponentReference>
+  </ItemGroup>
+</Project>

@@ -1,5 +1,4 @@
-﻿using System;
-using Advexp;
+﻿using Advexp;
 using Advexp.JSONSettings.Plugin;
 
 namespace Sample.Assembly.PCL
@@ -9,19 +8,24 @@ namespace Sample.Assembly.PCL
         //------------------------------------------------------------------------------
         static AssemblyClass()
         {
-            BaseSettingsConfiguration.EnablePlugin<IJSONSettingsPlugin, JSONSettingsPlugin>();
+            SettingsBaseConfiguration.SettingsNamePattern = "{ClassName}.{FieldName}";
+            SettingsBaseConfiguration.DisableFormatMigration = true;
+
+            SettingsBaseConfiguration.RegisterSettingsPlugin<IJSONSettingsPlugin, JSONSettingsPlugin>();
+
+            JSONSettingsConfiguration.JsonSerializerSettings.Formatting = 
+                Newtonsoft.Json.Formatting.Indented;
+
+            JSONSettingsConfiguration.JsonSerializerSettings.Converters.
+                                     Add(new Newtonsoft.Json.Converters.StringEnumConverter());
+
+            JSONSettingsConfiguration.PluginSettings.SkipSecureValues = false;
         }
 
         //------------------------------------------------------------------------------
         public static string GetJSON()
         {
-            var jsonPlugin = Settings.GetPlugin<IJSONSettingsPlugin>();
-
-            jsonPlugin.JsonSerializerSettings = new Newtonsoft.Json.JsonSerializerSettings();
-            //jsonPlugin.JsonSerializerSettings.Formatting = Newtonsoft.Json.Formatting.Indented;
-            jsonPlugin.JsonSerializerSettings.Converters.Add(new Newtonsoft.Json.Converters.StringEnumConverter());
-
-            return jsonPlugin.Settings;
+            return Settings.GetPlugin<IJSONSettingsPlugin>().Settings;
         }
 
         //------------------------------------------------------------------------------
@@ -64,13 +68,13 @@ namespace Sample.Assembly.PCL
         }
 
         //------------------------------------------------------------------------------
-        public static void Load()
+        public static void LoadSettings()
         {
             Settings.LoadSettings();
         }
 
         //------------------------------------------------------------------------------
-        public static void Save()
+        public static void SaveSettings()
         {
             Settings.SaveSettings();
         }

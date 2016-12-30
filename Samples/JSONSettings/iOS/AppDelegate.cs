@@ -1,58 +1,105 @@
 ﻿using Foundation;
 using UIKit;
+using MonoTouch.Dialog;
+using Advexp.JSONSettings.Plugin;
+using System;
 
 namespace Sample.JSONSettings.iOS
 {
-    // The UIApplicationDelegate for the application. This class is responsible for launching the
-    // User Interface of the application, as well as listening (and optionally responding) to application events from iOS.
     [Register("AppDelegate")]
     public class AppDelegate : UIApplicationDelegate
     {
-        // class-level declarations
-
+        //------------------------------------------------------------------------------
         public override UIWindow Window
         {
             get;
             set;
         }
 
+        //------------------------------------------------------------------------------
         public override bool FinishedLaunching(UIApplication application, NSDictionary launchOptions)
         {
-            // Override point for customization after application launch.
-            // If not required for your application you can safely delete this method
+            Window = new UIWindow (UIScreen.MainScreen.Bounds);
+
+            Settings.LoadSettings();
+
+            var rootElement = new RootElement ("Advexp.Settings JSON sample");
+          
+            var plugin = Settings.GetPlugin<IJSONSettingsPlugin>();
+            var jsonSettingsElement = new MultilineElement(plugin.Settings);
+
+            var boolElement = new BooleanElement("bool value", Settings.Bool);
+            boolElement.ValueChanged += (object sender, System.EventArgs e) => 
+            {
+                Settings.Bool = boolElement.Value;
+
+                UpdateJSON(rootElement, jsonSettingsElement);
+                Settings.SaveSetting(s => Settings.Bool);
+            };
+
+            var stringElement = new EntryElement("string value", "string value", Settings.String);
+            stringElement.AutocorrectionType = UITextAutocorrectionType.No;
+            stringElement.Changed += (object sender, EventArgs e) => 
+            {
+                Settings.String = stringElement.Value;
+
+                UpdateJSON(rootElement, jsonSettingsElement);
+                Settings.SaveSetting(s => Settings.String);
+            };
+
+            var enumElement = new RootElement("enum value", new RadioGroup((int)Settings.Enum));
+
+            Action<RadioElementEx, EventArgs> enumDelegate = (sender, e) => 
+            {
+                Settings.Enum = (SampleEnum)enumElement.RadioSelected;
+
+                UpdateJSON(rootElement, jsonSettingsElement);
+                Settings.SaveSetting(s => Settings.Enum);
+            };
+
+            var enumsSection = new RootElement("enum value", new RadioGroup((int)Settings.Enum)) {
+                new Section() {
+                    new RadioElementEx("Zero", enumDelegate),
+                    new RadioElementEx("One", enumDelegate),
+                    new RadioElementEx("Two", enumDelegate),
+                    new RadioElementEx("Three", enumDelegate),
+                    new RadioElementEx("Four", enumDelegate),
+                    new RadioElementEx("Five", enumDelegate),
+                    new RadioElementEx("Six", enumDelegate),
+                    new RadioElementEx("Seven", enumDelegate),
+                    new RadioElementEx("Eight", enumDelegate),
+                    new RadioElementEx("Nine", enumDelegate),
+                    new RadioElementEx("Ten", enumDelegate),
+                }
+            };
+
+            enumElement.Add(enumsSection);
+
+            var rootSection = new Section () {
+                boolElement,
+                stringElement,
+                enumElement,
+                jsonSettingsElement,
+            };
+
+            rootElement.Add(rootSection);
+                
+            var rootVC = new DialogViewController(rootElement);
+            var nav = new UINavigationController(rootVC);
+
+            Window.RootViewController = nav;
+            Window.MakeKeyAndVisible ();
 
             return true;
         }
 
-        public override void OnResignActivation(UIApplication application)
+        //------------------------------------------------------------------------------
+        void UpdateJSON(RootElement rootElement, Element element)
         {
-            // Invoked when the application is about to move from active to inactive state.
-            // This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) 
-            // or when the user quits the application and it begins the transition to the background state.
-            // Games should use this method to pause the game.
-        }
+            var plugin = Settings.GetPlugin<IJSONSettingsPlugin>();
 
-        public override void DidEnterBackground(UIApplication application)
-        {
-            // Use this method to release shared resources, save user data, invalidate timers and store the application state.
-            // If your application supports background exection this method is called instead of WillTerminate when the user quits.
-        }
-
-        public override void WillEnterForeground(UIApplication application)
-        {
-            // Called as part of the transiton from background to active state.
-            // Here you can undo many of the changes made on entering the background.
-        }
-
-        public override void OnActivated(UIApplication application)
-        {
-            // Restart any tasks that were paused (or not yet started) while the application was inactive. 
-            // If the application was previously in the background, optionally refresh the user interface.
-        }
-
-        public override void WillTerminate(UIApplication application)
-        {
-            // Called when the application is about to terminate. Save data, if needed. See also DidEnterBackground.
+            element.Caption = plugin.Settings;
+            rootElement.Reload(element, UITableViewRowAnimation.Automatic);
         }
     }
 }

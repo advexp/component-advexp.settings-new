@@ -1,6 +1,6 @@
 using UIKit;
 
-namespace Sample
+namespace Sample.LocalSettings.iOS
 {
     public class Application
     {

@@ -1,33 +1,49 @@
-﻿using Android.App;
+﻿using System;
+using Android.App;
 using Android.Widget;
 using Android.OS;
+using Android.Preferences;
+using Android.Content;
 using Advexp.JSONSettings.Plugin;
 
 namespace Sample.JSONSettings.Android
 {
-    [Activity(Label = "Sample.JSONSettings.Android", MainLauncher = true, Icon = "@mipmap/icon")]
+    [Activity(Label = "@string/app_name", MainLauncher = true, Icon = "@mipmap/icon")]
     public class MainActivity : Activity
     {
-        int count = 1;
+        static WeakReference s_TextView = new WeakReference(null);
 
+        //------------------------------------------------------------------------------
         protected override void OnCreate(Bundle savedInstanceState)
         {
-            Advexp.SettingsModuleInitializer.Initialize();
-            Advexp.BaseSettingsConfiguration.EnablePlugin<IJSONSettingsPlugin, JSONSettingsPlugin>();
-
             base.OnCreate(savedInstanceState);
 
-            // Set our view from the "main" layout resource
+            Context context = global::Android.App.Application.Context;
+            PreferenceManager.SetDefaultValues(context, Resource.Xml.preferences, false);
+
             SetContentView(Resource.Layout.Main);
 
-            // Get our button from the layout resource,
-            // and attach an event to it
-            Button button = FindViewById<Button>(Resource.Id.myButton);
-			
+            s_TextView.Target = FindViewById(Resource.Id.textView);
+
+            UpdatePropertiesText();
+
+            Button button = FindViewById<Button>(Resource.Id.changePrefsButton);
             button.Click += delegate
             {
-                button.Text = string.Format("{0} clicks!", count++);
+                StartActivity(typeof(LocalPreferencesActivity));
             };
+        }
+
+        //------------------------------------------------------------------------------
+        public static void UpdatePropertiesText()
+        {
+            LocalSettings.LoadSettings();
+
+            var plugin = LocalSettings.GetPlugin<IJSONSettingsPlugin>();
+            TextView textView = (TextView)s_TextView.Target;
+
+            String jsonText = plugin.Settings;
+            textView.Text = jsonText;
         }
     }
 }

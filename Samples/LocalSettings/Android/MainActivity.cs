@@ -5,7 +5,7 @@ using Android.OS;
 using Android.Preferences;
 using Android.Content;
 
-namespace Sample
+namespace Sample.LocalSettings.Android
 {
     [Activity(Label = "@string/app_name", MainLauncher = true, Icon = "@mipmap/icon")]
     public class MainActivity : Activity
@@ -15,11 +15,9 @@ namespace Sample
         //------------------------------------------------------------------------------
         protected override void OnCreate(Bundle savedInstanceState)
         {
-            Advexp.SettingsModuleInitializer.Initialize();
-
             base.OnCreate(savedInstanceState);
 
-            Context context = Android.App.Application.Context;
+            Context context = global::Android.App.Application.Context;
             PreferenceManager.SetDefaultValues(context, Resource.Xml.preferences, false);
 
             SetContentView(Resource.Layout.Main);

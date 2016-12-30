@@ -2,20 +2,13 @@
 using System.Runtime.InteropServices;
 
 // General assembly properties
-[assembly: AssemblyTitle("Advexp.Settings.Sample.Android")]
-[assembly: AssemblyDescription("Advexp.Settings.Sample.Android")]
-[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyTitle("Sample.LocalSettings.Android")]
+[assembly: AssemblyDescription("Sample.LocalSettings.Android")]
+[assembly: AssemblyConfiguration("1A97EC8A-D0AD-413E-BEF0-BA5B3EC581A7")]
 [assembly: AssemblyCompany("Advexp")]
-[assembly: AssemblyProduct("Advexp.Settings.Sample.Android")]
-[assembly: AssemblyCopyright("Alexey Ivakin, Copyright © 2015-2016")]
+[assembly: AssemblyProduct("Advexp.Settings.Sample")]
+[assembly: AssemblyCopyright("Alexey Ivakin, Copyright © 2015-2017")]
 [assembly: AssemblyTrademark("Advexp.Settings")]
-[assembly: AssemblyCulture("")]
-
-// COM settings
-[assembly: ComVisible(false)]
-
-// Assembly GUID
-[assembly: Guid("6B596B5D-445C-4C82-B3C2-50849C14E207")]
 
 // Assembly version information
-[assembly: AssemblyVersion("1.1.0.0")]
+[assembly: AssemblyVersion("2.0.0")]
