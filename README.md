@@ -16,7 +16,7 @@ Create cross-platform settings and make them accessible in your iOS or Android a
 
 **Advexp.Settings - Local** component for Xamarin you can find here: <http://components.xamarin.com/view/advexp-settings-local>
 
-Usage cases can be seen in the component examples.
+Samples and Unit Tests can be downloaded from this site.
 
 #####Example of a settings declaration
 
