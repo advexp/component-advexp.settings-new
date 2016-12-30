@@ -203,7 +203,7 @@ Arbitrary class methods can be used as a serializer.
 Method prototypes are:  
 *bool Load(string settingName, bool secure, out object value);*  
 Returns true if downloaded successfully, otherwise false  
-*void Save(string settingName, object value, bool secure);*  
+*void Save(string settingName, bool secure, object value);*  
 *void Delete(string settingName, bool secure);*  
 *void Synchronize();*  
 This attribute can be applied to a class or to a member of a class.
@@ -256,8 +256,7 @@ PCL projects
 
 **Advexp.Settings - Local** component for Xamarin you can find here: <http://components.xamarin.com/view/advexp-settings-local>
 
-You can also download the NuGet component "Advexp.Settings Local" from the site
-<https://www.nuget.org/packages/advexp.settings>
+You can also download the NuGet component "Advexp.Settings Local" from the site <https://www.nuget.org/packages/Advexp.Settings.Local>
 
 Please send your questions, suggestions and impressions to <components@advexp.net> with the subject "Advexp.Settings"
 
