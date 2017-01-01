@@ -259,6 +259,3 @@ PCL projects
 You can also download the NuGet component "Advexp.Settings Local" from the site <https://www.nuget.org/packages/Advexp.Settings.Local>
 
 Please send your questions, suggestions and impressions to <components@advexp.net> with the subject "Advexp.Settings"
-
-
-
