@@ -10,8 +10,7 @@
     <AssemblyName>Sample.AdvexpSettings.Assembly.PCL</AssemblyName>
     <TargetFrameworkProfile>Profile78</TargetFrameworkProfile>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
-    <ProductVersion>8.0.30703</ProductVersion>
-    <SchemaVersion>2.0</SchemaVersion>
+    <ReleaseVersion>2.0</ReleaseVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -36,8 +35,25 @@
     <Compile Include="Settings.cs" />
     <Compile Include="AssemblyClass.cs" />
   </ItemGroup>
-  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\..\packages\Newtonsoft.Json.7.0.1\lib\portable-net40+sl5+wp80+win8+wpa81\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Advexp.JSONSettings.Plugin.PCL">
+      <HintPath>..\..\..\packages\Advexp.Settings.Local.2.0.6\lib\portable-net45+wp80+win8+wpa81\Advexp.JSONSettings.Plugin.PCL.dll</HintPath>
+    </Reference>
+    <Reference Include="Advexp.Settings">
+      <HintPath>..\..\..\packages\Advexp.Settings.Local.2.0.6\lib\portable-net45+wp80+win8+wpa81\Advexp.Settings.dll</HintPath>
+    </Reference>
+    <Reference Include="Advexp.Settings.Utils.PCL">
+      <HintPath>..\..\..\packages\Advexp.Settings.Local.2.0.6\lib\portable-net45+wp80+win8+wpa81\Advexp.Settings.Utils.PCL.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpSerializer.PCL">
+      <HintPath>..\..\..\packages\Advexp.Settings.Local.2.0.6\lib\portable-net45+wp80+win8+wpa81\SharpSerializer.PCL.dll</HintPath>
+    </Reference>
+  </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
 </Project>

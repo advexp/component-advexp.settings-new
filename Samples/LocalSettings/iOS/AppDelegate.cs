@@ -3,7 +3,7 @@ using Foundation;
 using MonoTouch.Dialog;
 using UIKit;
 
-namespace Sample
+namespace Sample.LocalSettings.iOS
 {
     // The UIApplicationDelegate for the application. This class is responsible for launching the
     // User Interface of the application, as well as listening (and optionally responding) to
@@ -13,8 +13,6 @@ namespace Sample
     {
         UINavigationController m_navigation;
         UIWindow m_window;
-
-        DialogViewController m_LocalSettingsController = null;
 
         // This method is invoked when the application is about to move from active to inactive state.
         // OpenGL applications should use this method to pause.
@@ -47,21 +45,10 @@ namespace Sample
         // This method is invoked when the application has loaded its UI and its ready to run
         public override bool FinishedLaunching(UIApplication application, NSDictionary launchOptions)
         {
-            String title = "Advexp.Settings Demo";
-
-            var menu = new RootElement(title) {
-                new Section()
-                {
-                    new StringElement("Local Settings", LocalSettingsSample),
-                }
-            };
-
-            var dv = new DialogViewController(menu) {
-                Autorotate = true
-            };
+            var localSettingsController = new LocalSettingsController();
 
             m_navigation = new UINavigationController();
-            m_navigation.PushViewController(dv, true);
+            m_navigation.PushViewController(localSettingsController, true);
 
             // On iOS5 we use the new window.RootViewController, on older versions, we add the subview
             m_window = new UIWindow(UIScreen.MainScreen.Bounds);
@@ -76,17 +63,6 @@ namespace Sample
             }
 
             return true;
-        }
-
-        //------------------------------------------------------------------------------
-        public void LocalSettingsSample()
-        {
-            if (m_LocalSettingsController == null)
-            {
-                m_LocalSettingsController = new LocalSettingsController();
-            }
-
-            m_navigation.PushViewController(m_LocalSettingsController, true);
         }
     }
 }

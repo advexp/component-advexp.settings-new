@@ -2,7 +2,7 @@
 using Android.OS;
 using Android.Preferences;
 
-namespace Sample
+namespace Sample.LocalSettings.Android
 {
     [Activity(Label = "LocalPreferencesActivity")]
     public class LocalPreferencesActivity : PreferenceActivity
@@ -14,7 +14,7 @@ namespace Sample
 
             var transaction = FragmentManager.BeginTransaction();
             var preferences = new LocalPreferenceFragment();
-            transaction.Replace(Android.Resource.Id.Content, preferences);
+            transaction.Replace(global::Android.Resource.Id.Content, preferences);
             transaction.Commit();
         }
 

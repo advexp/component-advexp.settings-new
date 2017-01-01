@@ -1,7 +1,7 @@
 ﻿using System;
 using Advexp;
 
-namespace Sample
+namespace Sample.LocalSettings.Android
 {
     enum EnumPreference
     {
@@ -19,16 +19,16 @@ namespace Sample
 
     class LocalSettings : Advexp.Settings<LocalSettings>
     {
-        [Setting(Name = "checkbox")]
+        [Setting(Name = "checkbox", Default = false)]
         public static Boolean Checkbox {get; set;}
 
-        [Setting(Name = "switch")]
+        [Setting(Name = "switch", Default = false)]
         public static Boolean Switch {get; set;}
 
-        [Setting(Name = "edittext")]
+        [Setting(Name = "edittext", Default = "text from code")]
         public static String TextPreference{get; set;}
 
-        [Setting(Name = "enum")]
+        [Setting(Name = "enum", Default = EnumPreference.Seven)]
         public static EnumPreference EnumPreference{get; set;}
     }
 }
