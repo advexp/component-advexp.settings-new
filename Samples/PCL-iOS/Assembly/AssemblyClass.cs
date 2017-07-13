@@ -9,7 +9,6 @@ namespace Sample.Assembly.PCL
         static AssemblyClass()
         {
             SettingsBaseConfiguration.SettingsNamePattern = "{ClassName}.{FieldName}";
-            SettingsBaseConfiguration.DisableFormatMigration = true;
 
             SettingsBaseConfiguration.RegisterSettingsPlugin<IJSONSettingsPlugin, JSONSettingsPlugin>();
 
@@ -18,8 +17,6 @@ namespace Sample.Assembly.PCL
 
             JSONSettingsConfiguration.JsonSerializerSettings.Converters.
                                      Add(new Newtonsoft.Json.Converters.StringEnumConverter());
-
-            JSONSettingsConfiguration.PluginSettings.SkipSecureValues = false;
         }
 
         //------------------------------------------------------------------------------

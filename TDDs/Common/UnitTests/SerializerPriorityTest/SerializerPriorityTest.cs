@@ -42,8 +42,8 @@ namespace TDD
         [TestFixtureSetUp]
         public void Setup()
         {
+            SettingsConfiguration.EnableFormatMigration = false;
             SettingsConfiguration.TDDData.SerializerAction += SerializerAction;
-            SettingsConfiguration.DisableFormatMigration = true;
         }
 
         //------------------------------------------------------------------------------

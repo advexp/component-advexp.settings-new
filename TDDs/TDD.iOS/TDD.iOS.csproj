@@ -9,7 +9,7 @@
     <RootNamespace>TDD</RootNamespace>
     <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
     <AssemblyName>TDD.iOS</AssemblyName>
-    <ReleaseVersion>2.0</ReleaseVersion>
+    <ReleaseVersion>2.1</ReleaseVersion>
     <TargetFrameworkIdentifier>Xamarin.iOS</TargetFrameworkIdentifier>
     <TargetFrameworkVersion>v1.0</TargetFrameworkVersion>
   </PropertyGroup>
@@ -17,31 +17,31 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>..\..\Bin\iOS\iPhoneSimulator\Debug\TDD</OutputPath>
+    <OutputPath>bin\iPhoneSimulator\Debug</OutputPath>
     <DefineConstants>__UNIFIED__;DEBUG;__MOBILE__;__IOS__;</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <ConsolePause>false</ConsolePause>
     <MtouchDebug>true</MtouchDebug>
     <CodesignKey>iPhone Developer</CodesignKey>
-    <MtouchUseRefCounting>true</MtouchUseRefCounting>
     <MtouchArch>i386</MtouchArch>
     <MtouchLink>None</MtouchLink>
-    <MtouchNoSymbolStrip>true</MtouchNoSymbolStrip>
-    <MtouchFloat32>true</MtouchFloat32>
+    <MtouchNoSymbolStrip>false</MtouchNoSymbolStrip>
+    <MtouchFloat32>false</MtouchFloat32>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
 <MtouchSdkVersion></MtouchSdkVersion>
+<DeviceSpecificBuild>false</DeviceSpecificBuild>
+<MtouchFastDev>true</MtouchFastDev>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
     <Optimize>true</Optimize>
-    <OutputPath>..\..\Bin\iOS\iPhoneSimulator\Release\TDD</OutputPath>
+    <OutputPath>bin\iPhoneSimulator\Release</OutputPath>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <ConsolePause>false</ConsolePause>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <DefineConstants>__MOBILE__;__IOS__;</DefineConstants>
     <CodesignKey>iPhone Developer</CodesignKey>
-    <MtouchUseRefCounting>true</MtouchUseRefCounting>
     <MtouchArch>i386</MtouchArch>
     <MtouchLink>None</MtouchLink>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
@@ -50,35 +50,37 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>..\..\Bin\iOS\iPhone\Debug\TDD</OutputPath>
-    <DefineConstants>DEBUG;__MOBILE__;__IOS__;</DefineConstants>
+    <OutputPath>bin\iPhone\Debug</OutputPath>
+    <DefineConstants>__UNIFIED__;DEBUG;__MOBILE__;__IOS__;</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <ConsolePause>false</ConsolePause>
     <MtouchDebug>true</MtouchDebug>
     <CodesignKey>iPhone Developer</CodesignKey>
     <CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
-    <MtouchArch>ARMv7, ARMv7s, ARM64</MtouchArch>
-    <MtouchUseRefCounting>true</MtouchUseRefCounting>
+    <MtouchArch>ARMv7, ARM64</MtouchArch>
     <IpaPackageName>
     </IpaPackageName>
-    <MtouchNoSymbolStrip>true</MtouchNoSymbolStrip>
+    <MtouchNoSymbolStrip>false</MtouchNoSymbolStrip>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <MtouchLink>SdkOnly</MtouchLink>
+    <MtouchFloat32>true</MtouchFloat32>
+    <MtouchFastDev>true</MtouchFastDev>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
     <Optimize>true</Optimize>
-    <OutputPath>..\..\Bin\iOS\iPhone\Release\TDD</OutputPath>
+    <OutputPath>bin\iPhone\Release</OutputPath>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <ConsolePause>false</ConsolePause>
     <CodesignKey>iPhone Developer</CodesignKey>
     <DefineConstants>__MOBILE__;__IOS__;</DefineConstants>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
-    <MtouchArch>ARMv7, ARMv7s, ARM64</MtouchArch>
-    <MtouchUseRefCounting>true</MtouchUseRefCounting>
+    <MtouchArch>ARMv7, ARM64</MtouchArch>
     <IpaPackageName>
     </IpaPackageName>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <MtouchFloat32>true</MtouchFloat32>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -86,20 +88,17 @@
     <Reference Include="MonoTouch.Dialog-1" />
     <Reference Include="Xamarin.iOS" />
     <Reference Include="System.Core" />
+    <Reference Include="Advexp.Settings_V1">
+      <HintPath>..\References\iOS\Advexp.Settings_V1.dll</HintPath>
+    </Reference>
     <Reference Include="Advexp.Settings">
-      <HintPath>..\TDD.References\iOS\Advexp.Settings.dll</HintPath>
-    </Reference>
-    <Reference Include="Advexp.Settings.Utils.PCL">
-      <HintPath>..\TDD.References\iOS\Advexp.Settings.Utils.PCL.dll</HintPath>
-    </Reference>
-    <Reference Include="SharpSerializer.PCL">
-      <HintPath>..\TDD.References\iOS\SharpSerializer.PCL.dll</HintPath>
+      <HintPath>..\References\iOS\Advexp.Settings.dll</HintPath>
     </Reference>
     <Reference Include="Advexp.JSONSettings.Plugin.PCL">
-      <HintPath>..\TDD.References\Plugins\PCL\Release\JSONSettings\Advexp.JSONSettings.Plugin.PCL.dll</HintPath>
+      <HintPath>..\References\iOS\Advexp.JSONSettings.Plugin.PCL.dll</HintPath>
     </Reference>
-    <Reference Include="Advexp.Settings_V1">
-      <HintPath>..\TDD.References\V1\iOS\Advexp.Settings_V1.dll</HintPath>
+    <Reference Include="Advexp.Settings.Utils.PCL">
+      <HintPath>..\References\iOS\Advexp.Settings.Utils.PCL.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\..\packages\Newtonsoft.Json.7.0.1\lib\portable-net40+sl5+wp80+win8+wpa81\Newtonsoft.Json.dll</HintPath>
@@ -235,45 +234,34 @@
     <Compile Include="..\Common\UnitTests\FormatMigration\FormatMigrationTest.cs">
       <Link>UnitTests\FormatMigration\FormatMigrationTest.cs</Link>
     </Compile>
-    <Compile Include="..\Common\UnitTests\MultithreadingTest\MultithreadingTest.cs">
-      <Link>UnitTests\MultithreadingTest\MultithreadingTest.cs</Link>
-    </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
-    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\Contents.json" />
-    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\Icon.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\Icon%402x.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\Icon-60%402x.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\Icon-72.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\Icon-72%402x.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\Icon-76.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\Icon-76%402x.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\Icon-Small.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\Icon-Small%402x.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\Icon-Small-50.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\Icon-Small-50%402x.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\Icon-Small-40.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\Icon-Small-40%402x.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\Advexp.Settings.29.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\Advexp.Settings.TDD.29.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\Advexp.Settings.TDD.58.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\Advexp.Settings.TDD.87.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\Advexp.Settings.TDD.80.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\Advexp.Settings.TDD.120.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\Advexp.Settings.TDD.57.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\Advexp.Settings.TDD.114.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\Advexp.Settings.TDD.180.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\Advexp.Settings.TDD.40.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\Advexp.Settings.TDD.50.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\Advexp.Settings.TDD.100.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\Advexp.Settings.TDD.72.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\Advexp.Settings.TDD.144.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\Advexp.Settings.TDD.76.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\Advexp.Settings.TDD.152.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcons.appiconset\Advexp.Settings.TDD.167.png" />
+    <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />
   </ItemGroup>
   <ItemGroup>
-    <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Advexp.Settings.TDD.29.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Advexp.Settings.TDD.58.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Advexp.Settings.TDD.87.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Advexp.Settings.TDD.80.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Advexp.Settings.TDD.120.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Advexp.Settings.TDD.57.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Advexp.Settings.TDD.114.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Advexp.Settings.TDD.180.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Advexp.Settings.TDD.40.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Advexp.Settings.TDD.50.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Advexp.Settings.TDD.100.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Advexp.Settings.TDD.72.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Advexp.Settings.TDD.144.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Advexp.Settings.TDD.76.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Advexp.Settings.TDD.152.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Advexp.Settings.TDD.167.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <XamarinComponentReference Include="json.net">
+      <Version>7.0.1</Version>
+      <Visible>False</Visible>
+    </XamarinComponentReference>
   </ItemGroup>
 </Project>
