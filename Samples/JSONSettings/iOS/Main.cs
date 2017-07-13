@@ -9,7 +9,6 @@ namespace Sample.JSONSettings.iOS
         static void Main(string[] args)
         {
             Advexp.SettingsBaseConfiguration.SettingsNamePattern = "{ClassName}.{FieldName}";
-            Advexp.SettingsBaseConfiguration.DisableFormatMigration = true;
             Advexp.SettingsBaseConfiguration.RegisterSettingsPlugin<IJSONSettingsPlugin, JSONSettingsPlugin>();
 
             JSONSettingsConfiguration.JsonSerializerSettings.Formatting = 
@@ -17,8 +16,6 @@ namespace Sample.JSONSettings.iOS
 
             JSONSettingsConfiguration.JsonSerializerSettings.Converters.
                 Add(new Newtonsoft.Json.Converters.StringEnumConverter());
-
-            JSONSettingsConfiguration.PluginSettings.SkipSecureValues = false;
 
             // if you want to use a different Application Delegate class from "AppDelegate"
             // you can specify it here.

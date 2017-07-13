@@ -12,7 +12,7 @@ namespace TDD
         [TestFixtureSetUp]
         public void Setup()
         {
-            SettingsConfiguration.DisableFormatMigration = true;
+            SettingsConfiguration.EnableFormatMigration = false;
         }
 
         //------------------------------------------------------------------------------
