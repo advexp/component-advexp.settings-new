@@ -11,7 +11,8 @@
     <AssemblyName>Sample.JSONSettings.iOS</AssemblyName>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ReleaseVersion>2.1</ReleaseVersion>
+    <ReleaseVersion></ReleaseVersion>
+    <SynchReleaseVersion>false</SynchReleaseVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">
     <DebugSymbols>true</DebugSymbols>
@@ -77,22 +78,18 @@
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\..\..\packages\Newtonsoft.Json.7.0.1\lib\portable-net40+sl5+wp80+win8+wpa81\Newtonsoft.Json.dll</HintPath>
     </Reference>
-    <Reference Include="Advexp.JSONSettings.Plugin.PCL">
-      <HintPath>..\..\..\packages\Advexp.Settings.Local.2.1.6\lib\Xamarin.iOS10\Advexp.JSONSettings.Plugin.PCL.dll</HintPath>
-    </Reference>
     <Reference Include="Advexp.Settings">
-      <HintPath>..\..\..\packages\Advexp.Settings.Local.2.1.6\lib\Xamarin.iOS10\Advexp.Settings.dll</HintPath>
+      <HintPath>..\..\..\packages\Advexp.Settings.Local.2.2.1\lib\Xamarin.iOS10\Advexp.Settings.dll</HintPath>
     </Reference>
     <Reference Include="Advexp.Settings.Utils.PCL">
-      <HintPath>..\..\..\packages\Advexp.Settings.Local.2.1.6\lib\Xamarin.iOS10\Advexp.Settings.Utils.PCL.dll</HintPath>
+      <HintPath>..\..\..\packages\Advexp.Settings.Local.2.2.1\lib\Xamarin.iOS10\Advexp.Settings.Utils.PCL.dll</HintPath>
     </Reference>
-    <Reference Include="SharpSerializer.PCL">
-      <HintPath>..\..\..\packages\Advexp.Settings.Local.2.1.6\lib\Xamarin.iOS10\SharpSerializer.PCL.dll</HintPath>
+    <Reference Include="Advexp.JSONSettings.Plugin.PCL">
+      <HintPath>..\..\..\packages\Advexp.Settings.Local.2.2.1\lib\Xamarin.iOS10\Plugins\Advexp.JSONSettings.Plugin.PCL.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Main.storyboard" />
-    <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
@@ -109,27 +106,18 @@
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Advexp.Settings.29.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Advexp.Settings.40.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Advexp.Settings.60.png" />
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Advexp.Settings.58.png" />
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Advexp.Settings.87.png" />
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Advexp.Settings.80.png" />
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Advexp.Settings.120.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Advexp.Settings.57.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Advexp.Settings.114.png" />
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Advexp.Settings.180.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Advexp.Settings.40.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Advexp.Settings.50.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Advexp.Settings.100.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Advexp.Settings.72.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Advexp.Settings.144.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Advexp.Settings.20.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Advexp.Settings.29.png" />
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Advexp.Settings.76.png" />
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Advexp.Settings.152.png" />
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Advexp.Settings.167.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <XamarinComponentReference Include="json.net">
-      <Version>7.0.1</Version>
-      <Visible>False</Visible>
-    </XamarinComponentReference>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Advexp.Settings.1024.png" />    
   </ItemGroup>
 </Project>
