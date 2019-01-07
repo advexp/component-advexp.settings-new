@@ -48,6 +48,10 @@
     <ConsolePause>false</ConsolePause>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Advexp.JSONSettings.Plugin, Version=2.3.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\packages\Advexp.Settings.Local.2.3.2\lib\MonoAndroid10\Plugins\Advexp.JSONSettings.Plugin.dll</HintPath>
+    </Reference>
     <Reference Include="Advexp.Settings, Version=2.3.1.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\..\packages\Advexp.Settings.Local.2.3.2\lib\MonoAndroid10\Advexp.Settings.dll</HintPath>
     </Reference>
@@ -64,9 +68,6 @@
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
     <Reference Include="Mono.Android" />
-    <Reference Include="Advexp.JSONSettings.Plugin">
-      <HintPath>..\..\..\packages\Advexp.Settings.Local.2.3.2\lib\MonoAndroid10\Plugins\Advexp.JSONSettings.Plugin.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Resources\Resource.designer.cs" />

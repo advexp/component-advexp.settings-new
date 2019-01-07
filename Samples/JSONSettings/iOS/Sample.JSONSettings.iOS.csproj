@@ -72,6 +72,9 @@
     <CodesignKey>iPhone Developer</CodesignKey>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Advexp.JSONSettings.Plugin">
+      <HintPath>..\..\..\packages\Advexp.Settings.Local.2.3.2\lib\Xamarin.iOS10\Plugins\Advexp.JSONSettings.Plugin.dll</HintPath>
+    </Reference>
     <Reference Include="Advexp.Settings, Version=2.3.1.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\..\packages\Advexp.Settings.Local.2.3.2\lib\Xamarin.iOS10\Advexp.Settings.dll</HintPath>
     </Reference>
@@ -88,9 +91,6 @@
     <Reference Include="System.Core" />
     <Reference Include="Xamarin.iOS" />
     <Reference Include="MonoTouch.Dialog-1" />
-    <Reference Include="Advexp.JSONSettings.Plugin">
-      <HintPath>..\..\..\packages\Advexp.Settings.Local.2.3.2\lib\Xamarin.iOS10\Plugins\Advexp.JSONSettings.Plugin.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Main.storyboard" />

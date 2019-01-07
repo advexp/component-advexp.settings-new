@@ -84,6 +84,9 @@
     <Reference Include="Advexp.Settings.Utils, Version=2.3.1.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Advexp.Settings.Local.2.3.2\lib\Xamarin.iOS10\Advexp.Settings.Utils.dll</HintPath>
     </Reference>
+    <Reference Include="InAppSettingsKit, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Xamarin.InAppSettingsKit.2.6.0.1\lib\Xamarin.iOS\InAppSettingsKit.dll</HintPath>
+    </Reference>
     <Reference Include="SharpSerializer, Version=3.0.1.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Advexp.Settings.Local.2.3.2\lib\Xamarin.iOS10\SharpSerializer.dll</HintPath>
     </Reference>
@@ -91,9 +94,6 @@
     <Reference Include="Xamarin.iOS" />
     <Reference Include="MonoTouch.Dialog-1" />
     <Reference Include="System.Core" />
-    <Reference Include="InAppSettingsKit">
-      <HintPath>..\..\packages\Xamarin.InAppSettingsKit.2.6.0.1\lib\Xamarin.iOS\InAppSettingsKit.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />

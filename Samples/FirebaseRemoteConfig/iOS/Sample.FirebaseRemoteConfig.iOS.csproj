@@ -95,6 +95,12 @@
     <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Advexp.FirebaseRemoteConfig.Plugin">
+      <HintPath>..\..\..\packages\Advexp.Settings.Cloud.Evaluation.2.3.2\lib\Xamarin.iOS10\Plugins\Advexp.FirebaseRemoteConfig.Plugin.dll</HintPath>
+    </Reference>
+    <Reference Include="Advexp.FirebaseRemoteConfig.Plugin.iOS">
+      <HintPath>..\..\..\packages\Advexp.Settings.Cloud.Evaluation.2.3.2\lib\Xamarin.iOS10\Plugins\Advexp.FirebaseRemoteConfig.Plugin.iOS.dll</HintPath>
+    </Reference>
     <Reference Include="Advexp.Settings, Version=2.3.1.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\..\packages\Advexp.Settings.Cloud.Evaluation.2.3.2\lib\Xamarin.iOS10\Advexp.Settings.dll</HintPath>
     </Reference>
@@ -123,12 +129,6 @@
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
     <Reference Include="Xamarin.iOS" />
-    <Reference Include="Advexp.FirebaseRemoteConfig.Plugin">
-      <HintPath>..\..\..\packages\Advexp.Settings.Cloud.Evaluation.2.3.2\lib\Xamarin.iOS10\Plugins\Advexp.FirebaseRemoteConfig.Plugin.dll</HintPath>
-    </Reference>
-    <Reference Include="Advexp.FirebaseRemoteConfig.Plugin.iOS">
-      <HintPath>..\..\..\packages\Advexp.Settings.Cloud.Evaluation.2.3.2\lib\Xamarin.iOS10\Plugins\Advexp.FirebaseRemoteConfig.Plugin.iOS.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json">
